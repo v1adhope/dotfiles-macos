@@ -35,11 +35,11 @@ zinit wait lucid light-mode depth=1 for \
 
 ### Exports
 #
-source $HOME/.config/script/alias.sh
+source $HOME/.local/scripts/alias.sh
 # TODO: source $HOME/.private
 #
 # Runnable scripts
-export PATH=$HOME/.config/script/run:$PATH
+export PATH=$HOME/.local/scripts/executables:$PATH
 #
 # Homebrew
 export PATH=/usr/local/sbin:$PATH

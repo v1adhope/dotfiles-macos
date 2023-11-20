@@ -1,3 +1,3 @@
-Configs/mpv/.config/mpv/watch_later
-Configs/nvim/.config/nvim/plugin
+config_macos/mpv/watch_later
+config_macos/nvim/plugin
 install.sh

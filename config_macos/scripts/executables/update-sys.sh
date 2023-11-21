@@ -12,7 +12,7 @@ brew cleanup || exit 1
 echo "=> run brew doctor..."
 brew doctor || exit 1
 
-echo "=> run app store apps update (mas)"
+echo "=> run app store apps update (mas)..."
 mas upgrade || exit 1
 
 # echo "=> run software update..."

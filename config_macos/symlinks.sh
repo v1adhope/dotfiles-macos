@@ -2,23 +2,29 @@
 
 ### Comment/ uncomment that you need
 #
+root_path=$HOME/.local/dotfiles-macos/config_macos
 config_path=$HOME/.config
 local_path=$HOME/.local
 
-ln -sf $HOME/.local/dotfiles/config_macos/zsh/.zshrc $HOME
-# unlink $HOME/.zshrc
+CONFIGS=(alacritty tmux nvim mpv)
 
-ln -sf $HOME/.local/dotfiles/config_macos/alacritty $config_path
-# unlink $HOME/.config/alacritty
+function link_configs {
+  for config in ${CONFIGS[@]}; do
+    ln -sf $root_path/$config $config_path
+  done
 
-ln -sf $HOME/.local/dotfiles/config_macos/tmux $config_path
-# unlink $HOME/.config/tmux
+  ln -sf $root_path/zsh $HOME
+  ln -sf $root_path/scripts $local_path
+}
 
-ln -sf $HOME/.local/dotfiles/config_macos/nvim $config_path
-# unlink $HOME/.config/nvim
+function unlink_configs {
+  for config in ${CONFIGS[@]}; do
+    unlink $config_path/$config
+  done
 
-ln -sf $HOME/.local/dotfiles/config_macos/mpv $config_path
-# unlink $HOME/.config/mpv
+  unlink $HOME/.zshrc
+  unlink $HOME/.local/scripts
+}
 
-ln -sf $HOME/.local/dotfiles/config_macos/scripts $local_path
-# unlink $HOME/.local/scripts
+# link_configs
+# unlink_configs

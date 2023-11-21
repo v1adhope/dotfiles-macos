@@ -1,8 +1,9 @@
+-- TODO: not working
+
 return {
-  init_options = {
+  initialize = {
     preferences = {
       disableSuggestions = true
     }
   }
 }
-

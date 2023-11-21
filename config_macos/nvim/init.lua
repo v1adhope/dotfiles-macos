@@ -16,13 +16,7 @@ require 'other-modules/plugins/telescope'
 
 -- Features
 require 'other-modules/new-line-without-comment'
-
--- Go features
-require 'other-modules/go/formatting'
+require 'other-modules/formatting'
 
 -- Rust features
-require 'other-modules/rust/formatting'
 require 'other-modules/plugins/crates'
-
--- JS features
-require 'other-modules/js/formatting'

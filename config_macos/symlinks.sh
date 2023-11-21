@@ -6,14 +6,14 @@ root_path=$HOME/.local/dotfiles-macos/config_macos
 config_path=$HOME/.config
 local_path=$HOME/.local
 
-CONFIGS=(alacritty tmux nvim mpv)
+CONFIGS=(alacritty tmux nvim mpv bat)
 
 function link_configs {
   for config in ${CONFIGS[@]}; do
     ln -sf $root_path/$config $config_path
   done
 
-  ln -sf $root_path/zsh $HOME
+  ln -sf $root_path/zsh/.zshrc $HOME
   ln -sf $root_path/scripts $local_path
 }
 

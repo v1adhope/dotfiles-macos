@@ -20,8 +20,7 @@ if not ok then
   return
 end
 
--- Connecting servers
--- require node(npm)
+-- Connecting servers (see plugins.lua for require)
 Servers = { 'lua_ls', 'gopls', 'bashls', 'jsonls', 'emmet_ls', 'html', 'rust_analyzer', 'tsserver', 'intelephense' }
 
 mason_lsp.setup {

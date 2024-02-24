@@ -1,4 +1,4 @@
--- local file_ext = { "*.go", "*.js", "*.ts", "*.jsx", "*.tsx", "*.rs", "*.php" } // TODO: php license
+-- local file_ext = { "*.go", "*.js", "*.ts", "*.jsx", "*.tsx", "*.rs", "*.php" } -- TODO: php license
 local file_ext = { "*.go", "*.js", "*.ts", "*.jsx", "*.tsx", "*.rs" }
 
 vim.api.nvim_create_autocmd("BufWritePre", {

@@ -30,7 +30,7 @@ for _, lsp in ipairs(Servers) do
       gopls = languages.go,
       rust = languages.rust,
       tsserver = languages.tsserver,
-      php = languages.php
+      -- php = languages.php
     }
   }
 end

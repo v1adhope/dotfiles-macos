@@ -29,7 +29,8 @@ for _, lsp in ipairs(Servers) do
       json = languages.json,
       gopls = languages.go,
       rust = languages.rust,
-      tsserver = languages.tsserver
+      tsserver = languages.tsserver,
+      php = languages.php
     }
   }
 end

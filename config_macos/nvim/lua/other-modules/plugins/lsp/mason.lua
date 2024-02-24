@@ -22,7 +22,7 @@ end
 
 -- Connecting servers
 -- require node(npm)
-Servers = { 'lua_ls', 'gopls', 'bashls', 'jsonls', 'emmet_ls', 'html', 'rust_analyzer', 'tsserver' }
+Servers = { 'lua_ls', 'gopls', 'bashls', 'jsonls', 'emmet_ls', 'html', 'rust_analyzer', 'tsserver', 'intelephense' }
 
 mason_lsp.setup {
   ensure_install = { Servers },

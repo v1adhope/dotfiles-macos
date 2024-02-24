@@ -1,0 +1,12 @@
+[user]
+        email = vladislavgardner@gmail.com
+        name = v1adhope
+[init]
+        defaultBranch = main
+[alias]
+        br = branch
+        ci = commit
+        st = status
+        last = log -1 HEAD
+[core]
+	autocrlf = input

@@ -81,7 +81,7 @@ return packer.startup(function(use)
   }
 
   -- Comment
-  use 'terrortylor/nvim-comment'
+  use 'numToStr/Comment.nvim'
 
   -- Formatting
   use 'cappyzawa/trim.nvim'

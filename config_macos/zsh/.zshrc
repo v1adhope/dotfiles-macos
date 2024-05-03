@@ -45,6 +45,9 @@ export PATH=$HOME/.local/scripts/executables:$PATH
 export PATH=/usr/local/sbin:$PATH
 export HOMEBREW_NO_ANALYTICS=1
 #
+# Customize nnn
+source "$HOME/.config/nnn/customize.sh"
+#
 # Go
 export GOPATH=$HOME/.local/share/go
 export PATH=$HOME/.local/share/go/bin:$PATH

@@ -19,6 +19,12 @@ if not ok then
 end
 
 for _, lsp in ipairs(Servers) do
+  if lsp == 'emmet_ls' then
+    config[lsp].setup {
+      filetypes = languages.emmetls['filetypes']
+    }
+  end
+
   config[lsp].setup {
     on_attach = function(client, bufnr)
       handlers.custom_lsp_attach(client, bufnr)

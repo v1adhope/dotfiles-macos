@@ -1,15 +1,18 @@
--- local file_ext = { "*.go", "*.js", "*.ts", "*.jsx", "*.tsx", "*.rs", "*.php" } -- TODO: php license
-local file_ext = { "*.go", "*.js", "*.ts", "*.jsx", "*.tsx", "*.rs" }
+-- TODO: php license
+-- local file_ext = { "*.php", "*.go", "*.js", "*.ts", "*.jsx", "*.tsx", "*.rs" }
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = file_ext,
+  pattern = { "*.go", "*.vue", "*.js", "*.ts", "*.jsx", "*.tsx", "*.rs", "*.php" },
   callback = function()
-    vim.lsp.buf.format(nil, 500)
+    vim.lsp.buf.format {
+      timeout_ms = 500,
+      filter = function(client) return client.name ~= "tsserver" end
+    }
   end
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = file_ext,
+  pattern = { "*.go", "*.vue", "*.js", "*.ts", "*.jsx", "*.tsx", "*.rs" },
   callback = function()
     local params = vim.lsp.util.make_range_params(nil, vim.lsp.util._get_offset_encoding())
     params.context = { only = { "source.organizeImports" } }

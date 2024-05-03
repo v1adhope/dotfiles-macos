@@ -5,14 +5,14 @@ end
 
 -- TODO: No verification
 local theme = 'tokyonight'
-local loaded_extensions = 'nvim-tree'
+local loaded_extensions = { 'nvim-tree' }
 
 lualine.setup {
   options = {
     theme = theme,
     ignore_focus = { 'NvimTree' },
     globalstatus = true,
-    extensions = { loaded_extensions }
+    extensions = loaded_extensions
   },
   sections = { lualine_x = { 'encoding', 'filetype' } }
 }

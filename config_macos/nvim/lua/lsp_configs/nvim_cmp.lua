@@ -8,7 +8,7 @@ if not ok then
   return
 end
 
--- Correct work cmp with luasnip
+-- INFO: correct work cmp with luasnip
 local has_words_before = function()
   unpack = unpack
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -27,9 +27,9 @@ vscode_like_snippets.lazy_load(
 local ok, cmp_autopairs = pcall(require, 'nvim-autopairs.completion.cmp')
 if not ok then
   return
-end
+ end
 
--- If you want insert `(` after select function or method item
+-- INFO: insert `(` after select function or method item
 cmp.event:on(
   'confirm_done',
   cmp_autopairs.on_confirm_done()
@@ -80,10 +80,13 @@ cmp.setup {
       { name = 'buffer' }
     }
   }),
+
+  -- TODO: rust crates not working
   -- cmp.setup.filetype({ 'toml', 'lock' }, {
   --   sources = {
   --     { name = 'crates' },
   -- { name = 'buffer' }
   -- }
   -- })
+
 }

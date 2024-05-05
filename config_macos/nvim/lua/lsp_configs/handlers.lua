@@ -17,7 +17,8 @@ M.capabilities = cmp_lsp.default_capabilities(vim.lsp.protocol.make_client_capab
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 function M.custom_lsp_attach(client, bufnr)
-  --TODO: nvim-navic?
+
+  --TODO: use nvim-navic???
   _ = client
 
   -- Enable completion triggered by <c-x><c-o>

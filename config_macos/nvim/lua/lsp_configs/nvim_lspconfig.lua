@@ -1,4 +1,4 @@
-local ok, _ = pcall(require, 'other-modules/plugins/lsp/mason')
+local ok, _ = pcall(require, 'lsp_configs/mason')
 if not ok then
   return
 end
@@ -8,12 +8,12 @@ if not ok then
   return
 end
 
-local ok, handlers = pcall(require, 'other-modules/plugins/lsp/handlers')
+local ok, handlers = pcall(require, 'lsp_configs/handlers')
 if not ok then
   return
 end
 
-local ok, languages = pcall(require, 'other-modules/plugins/lsp/languages')
+local ok, languages = pcall(require, 'lsp_configs/languages')
 if not ok then
   return
 end

@@ -41,7 +41,28 @@ local config = function()
   cmd('highlight TSRainbowCyan  guifg=#7dcfff ctermfg=Cyan')      -- Cyan
 
   treesitter.setup {
-    ensure_install = { 'all' },
+    ensure_installed = {
+      'lua',
+      'vim',
+      'bash',
+      'gitignore',
+      'json',
+      'yaml',
+      'html',
+      'sql',
+      'javascript',
+      'css',
+      'scss',
+      'go',
+      'php',
+      'vue',
+      'markdown',
+      'make',
+      'dockerfile',
+      'python',
+      'rust',
+      'php_only'
+    },
     sync_install = false,
     auto_install = true,
     highlight = {

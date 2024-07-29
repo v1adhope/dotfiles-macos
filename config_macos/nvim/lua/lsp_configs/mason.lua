@@ -21,8 +21,20 @@ if not ok then
 end
 
 -- Connecting servers (see plugins.lua for require)
-Servers = { 'lua_ls', 'gopls', 'bashls', 'volar', 'jsonls', 'emmet_ls',
-  'html', 'rust_analyzer', 'tsserver', 'intelephense', 'pyright' }
+Servers = {
+  'lua_ls',
+  'gopls',
+  'bashls',
+  'volar',
+  'jsonls',
+  'emmet_ls',
+  'html',
+  'rust_analyzer',
+  'tsserver',
+  -- 'phpactor',
+  'intelephense',
+  'pyright'
+}
 
 mason_lsp.setup {
   ensure_install = { Servers },

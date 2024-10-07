@@ -65,6 +65,9 @@ export NVM_DIR="$HOME/.nvm"
 #
 # Bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+#
+# Editor
+export EDITOR=nvim
 
 ### Loads
 #

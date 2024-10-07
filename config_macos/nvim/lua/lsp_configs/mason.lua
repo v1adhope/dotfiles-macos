@@ -30,7 +30,7 @@ Servers = {
   'emmet_ls',
   'html',
   'rust_analyzer',
-  'tsserver',
+  'ts_ls',
   -- 'phpactor',
   'intelephense',
   'pyright'

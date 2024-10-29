@@ -2,7 +2,7 @@
 
 alias ls="ls -lh --color"
 alias v="nvim"
-alias cdmus="cd /Users/rat/Library/CloudStorage/Dropbox/DropsyncFiles/music"
+alias py="python3"
 alias cat="bat"
 alias n="nnn"
 alias artisan="php artisan"

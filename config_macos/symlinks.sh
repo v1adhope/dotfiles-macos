@@ -14,6 +14,7 @@ function link_configs {
   done
 
   ln -sf $root_path/zsh/.zshrc $HOME
+  ln -sf $root_path/ideavimrc/.ideavimrc $HOME
   ln -sf $root_path/scripts $local_path
 }
 
@@ -23,6 +24,7 @@ function unlink_configs {
   done
 
   unlink $HOME/.zshrc
+  unlink $HOME/.ideavimrc
   unlink $HOME/.local/scripts
 }
 

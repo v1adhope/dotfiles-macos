@@ -45,6 +45,9 @@ export PATH=$HOME/.local/scripts/executables:$PATH
 export PATH=/usr/local/sbin:$PATH
 export HOMEBREW_NO_ANALYTICS=1
 #
+# .NET
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+#
 # Customize nnn
 source "$HOME/.config/nnn/customize.sh"
 #

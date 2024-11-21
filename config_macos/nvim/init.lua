@@ -1,6 +1,6 @@
-require "plugins_manager"
-require "settings"
-require "keymaps"
+require 'plugins_manager'
+require 'settings'
+require 'keymaps'
 
 -- TODO: lsp relations
 require 'lsp_configs/nvim_lspconfig'

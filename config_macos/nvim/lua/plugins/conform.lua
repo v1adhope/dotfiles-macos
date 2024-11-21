@@ -7,12 +7,12 @@ local config = function()
   conform.setup {
     formatters_by_ft = {
       go = {
-        -- go install golang.org/x/tools/cmd/goimports@latest
+        -- WATCH: go install golang.org/x/tools/cmd/goimports@latest
         'goimports',
         'gofmt'
       },
       python = {
-        -- python3 -m pip install ruff --break-system-packages
+        -- WATCH: python3 -m pip install ruff --break-system-packages
         'ruff_organize_imports',
         'ruff_format'
       },

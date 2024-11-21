@@ -25,6 +25,7 @@ Map('n', '<M-f>', ':NvimTreeToggle<CR>')
 -- Gitsigns
 Map('n', '<M-p>', ':Gitsigns preview_hunk<CR>')
 Map('n', '<M-s>', ':Gitsigns select_hunk<CR>')
+Map('n', '<M-b>', ':Gitsigns blame_line<CR>')
 
 -- Markdown
 Map('n', '<M-m>', ':MPToggle<CR>')

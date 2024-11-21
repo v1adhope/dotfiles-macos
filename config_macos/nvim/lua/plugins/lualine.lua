@@ -4,7 +4,7 @@ local config = function()
     return
   end
 
-  -- WATCH: there is no validation
+  -- There is no validation
   local theme = 'tokyonight'
   local loaded_extensions = { 'nvim-tree' }
 

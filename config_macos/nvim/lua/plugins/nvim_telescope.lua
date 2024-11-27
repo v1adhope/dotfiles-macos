@@ -10,6 +10,7 @@ local config = function()
   end
 
   telescope.setup {
+    defaults = { file_ignore_patterns = { "vendor" } },
     pickers = {
       buffers = {
         mappings = {

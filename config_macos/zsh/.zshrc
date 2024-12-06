@@ -45,6 +45,9 @@ export PATH=$HOME/.local/scripts/executables:$PATH
 export PATH=/usr/local/sbin:$PATH
 export HOMEBREW_NO_ANALYTICS=1
 #
+# Pg utils
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+#
 # .NET
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 #

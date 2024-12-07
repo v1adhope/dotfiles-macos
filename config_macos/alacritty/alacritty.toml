@@ -6,7 +6,7 @@ shape = "Block"
 size = 15.0
 
 [font.normal]
-family = "Hack Nerd Font"
+family = "Hack Nerd Font Mono"
 style = "Regular"
 
 [terminal.shell]

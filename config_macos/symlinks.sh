@@ -1,12 +1,10 @@
 #!/bin/bash
 
-### Comment/ uncomment that you need
-#
 root_path=$HOME/.local/dotfiles-macos/config_macos
 config_path=$HOME/.config
 local_path=$HOME/.local
 
-CONFIGS=(alacritty tmux nvim mpv bat git nnn)
+CONFIGS=(alacritty tmux nvim mpv bat git nnn zed)
 
 function link_configs {
   for config in ${CONFIGS[@]}; do
@@ -28,5 +26,6 @@ function unlink_configs {
   unlink $HOME/.local/scripts
 }
 
+# Comment/ uncomment that you need
 # link_configs
 # unlink_configs

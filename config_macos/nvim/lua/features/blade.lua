@@ -17,3 +17,9 @@ vim.filetype.add({
     ['.*%.blade%.php'] = 'blade',
   },
 })
+
+vim.filetype.add({
+  pattern = {
+    ['.env.*'] = 'sh',
+  },
+})

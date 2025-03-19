@@ -11,6 +11,5 @@ require 'features/new_line_without_comment'
 require 'features/formatting'
 require 'features/blade'
 require 'features/auto_close_quick_menu'
-
 -- TODO: Rust features
 -- require 'other-modules/plugins/crates'

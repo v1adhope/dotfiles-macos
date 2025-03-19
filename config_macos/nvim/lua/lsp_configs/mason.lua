@@ -33,7 +33,8 @@ Servers = {
   'ts_ls',
   -- 'phpactor',
   'intelephense',
-  'pyright'
+  'pyright',
+  'nil_ls'
 }
 
 mason_lsp.setup {

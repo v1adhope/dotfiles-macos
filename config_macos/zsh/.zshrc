@@ -53,6 +53,9 @@ export PATH=/opt/homebrew/opt/libpq/bin:$PATH
 export GOPATH=$HOME/.local/share/go
 export PATH=$HOME/.local/share/go/bin:$PATH
 
+export GONOSUMDB=gitea.gospodaprogrammisty.ru
+export GOPROXY=direct
+
 # Rust
 export RUSTUP_HOME=$HOME/.local/share/rust/rustup
 export CARGO_HOME=$HOME/.local/share/rust/cargo
@@ -85,6 +88,9 @@ alias macfixpostgres14="rm -rf /usr/local/var/postgresql@14/postmaster.pid"
 fpath=(/Users/rat/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
+
+# Kafka completion - doen't work - fix later
+# source <(kafkactl completion zsh)
 
 # This loads nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

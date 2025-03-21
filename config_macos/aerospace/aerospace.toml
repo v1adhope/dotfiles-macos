@@ -202,7 +202,7 @@ if.app-id = 'com.apple.finder'
 run = 'layout floating'
 
 [[on-window-detected]]
-if.app-id = 'org.keepassxc.keepassxc'
+if.app-id = 'com.keepassium.ios'
 run = 'layout floating'
 
 [[on-window-detected]]

@@ -6,7 +6,9 @@
     nix-darwin.url = "github:LnL7/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    # https://github.com/zhaofengli/nix-homebrew/issues/70
+    # nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    nix-homebrew.url = "git+https://github.com/zhaofengli/nix-homebrew?ref=refs/pull/71/merge";
     mac-app-util.url = "github:hraban/mac-app-util";
   };
 
@@ -56,17 +58,6 @@
         enable = true;
         enableBashCompletion = true;
         enableCompletion = true;
-	      shellInit = ''
-          alias ls="ls -lh --color"
-          alias v="nvim"
-          alias n="nnn"
-          alias py="python3"
-          alias artisan="php artisan"
-          alias config-edit="nvim /etc/nix-darwin/flake.nix"
-          alias config-rebuild="darwin-rebuild switch -I /etc/nix-darwin"
-
-          alias macfixpostgres14="rm -rf /usr/local/var/postgresql@14/postmaster.pid"
-        '';
       };
 
       # Set Git commit hash for darwin-version.
@@ -107,7 +98,7 @@
         NSGlobalDomain.AppleShowScrollBars = "Always";
         NSGlobalDomain.AppleTemperatureUnit = "Celsius";
 	      dock.persistent-apps = [
-	        "/Applications/KeePassXC.app"
+	        "/Applications/KeePassium.app"
 	        "/Applications/Obsidian.app"
           "${pkgs.skimpdf}/Applications/Skim.app"
 	        "/Applications/Firefox.app"
@@ -140,6 +131,9 @@
 
       homebrew = {
       	enable = true;
+        taps = [
+          "nikitabobko/tap"
+        ];
 	      casks = [
           "nikitabobko/tap/aerospace"
           "maccy"
@@ -155,7 +149,6 @@
           "rider"
           "windows-app"
 
-	        "keepassxc"
           "obsidian"
 	        "firefox"
 	        "dropbox"
@@ -164,18 +157,20 @@
 
           "slack"
           "mattermost"
-	    ];
-      brews = [
+	      ];
+        brews = [
+          "mkcert"
           "libpq"
-      ];
-	    masApps = {
-        "Numbers" = 409203825;
-        "Keynote" = 409183694;
-        "Pages" = 409201541;
-      };
-	    onActivation.cleanup = "zap";
-	    onActivation.autoUpdate = true;
-	    onActivation.upgrade = true;
+        ];
+	      masApps = {
+          "Numbers" = 409203825;
+          "Keynote" = 409183694;
+          "Pages" = 409201541;
+          "KeePassium" = 1435127111;
+        };
+	      onActivation.cleanup = "zap";
+	      onActivation.autoUpdate = true;
+	      onActivation.upgrade = true;
     };
   };
   in

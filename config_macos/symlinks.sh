@@ -1,6 +1,14 @@
 #!/bin/bash
 
 # Prepare nix-darwin flakes and use config from nix-darwin directive. See https://github.com/LnL7/nix-darwin
+function first_run {
+  softwareupdate --install-rosetta
+  xcode-select --install
+}
+
+function post_nix-darwin_run {
+  rustup default stable
+}
 
 root_path=$HOME/.local/dotfiles-macos/config_macos
 config_path=$HOME/.config
@@ -30,5 +38,7 @@ function unlink_configs {
 }
 
 # Comment/ uncomment that you need
+# first_run
 # link_configs
 # unlink_configs
+# post_nix-darwin_run

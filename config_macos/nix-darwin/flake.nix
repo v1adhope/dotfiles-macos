@@ -6,9 +6,7 @@
     nix-darwin.url = "github:LnL7/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    # https://github.com/zhaofengli/nix-homebrew/issues/70
-    # nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    nix-homebrew.url = "git+https://github.com/zhaofengli/nix-homebrew?ref=refs/pull/71/merge";
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     mac-app-util.url = "github:hraban/mac-app-util";
   };
 
@@ -154,6 +152,7 @@
 	        "dropbox"
           "keka"
           "appcleaner"
+          "monitorcontrol"
 
           "slack"
           "mattermost"

@@ -104,6 +104,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-equal = 'resize smart +50'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
+    # In your config, you can drop workspace bindings that you don't need
     alt-1 = 'workspace 1'
     alt-2 = 'workspace 2'
     alt-3 = 'workspace 3'
@@ -113,10 +114,10 @@ automatically-unhide-macos-hidden-apps = false
     # alt-7 = 'workspace 7'
     # alt-8 = 'workspace 8'
     # alt-9 = 'workspace 9'
-    # alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
+    alt-a = 'workspace A'
     # alt-b = 'workspace B'
     # alt-c = 'workspace C'
-    # alt-d = 'workspace D'
+    alt-d = 'workspace D'
     # alt-e = 'workspace E'
     # alt-g = 'workspace G'
     # alt-i = 'workspace I'
@@ -145,10 +146,10 @@ automatically-unhide-macos-hidden-apps = false
     # alt-shift-7 = 'move-node-to-workspace 7'
     # alt-shift-8 = 'move-node-to-workspace 8'
     # alt-shift-9 = 'move-node-to-workspace 9'
-    # alt-shift-a = 'move-node-to-workspace A'
+    alt-shift-a = 'move-node-to-workspace A'
     # alt-shift-b = 'move-node-to-workspace B'
     # alt-shift-c = 'move-node-to-workspace C'
-    # alt-shift-d = 'move-node-to-workspace D'
+    alt-shift-d = 'move-node-to-workspace D'
     # alt-shift-e = 'move-node-to-workspace E'
     # alt-shift-f = 'move-node-to-workspace F'
     # alt-shift-g = 'move-node-to-workspace G'
@@ -218,6 +219,10 @@ if.app-id = 'com.apple.keychainaccess'
 run = 'layout floating'
 
 [[on-window-detected]]
+if.app-name-regex-substring = 'Homebank'
+run = 'layout floating'
+
+[[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace 1'
 
@@ -231,7 +236,7 @@ run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
 if.app-id = 'org.alacritty'
-run = 'move-node-to-workspace 4'
+run = 'move-node-to-workspace A'
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
@@ -240,3 +245,7 @@ run = 'move-node-to-workspace S'
 [[on-window-detected]]
 if.app-id = 'Mattermost.Desktop'
 run = 'move-node-to-workspace M'
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.datagrip'
+run = 'move-node-to-workspace D'

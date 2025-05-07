@@ -21,3 +21,6 @@ rebase = true
 
 [url "git@gitea.gospodaprogrammisty.ru:"]
 insteadOf = https://gitea.gospodaprogrammisty.ru
+
+[includeIf "gitdir:~/projects/smartway/"]
+path = ~/.config/git/sw.config

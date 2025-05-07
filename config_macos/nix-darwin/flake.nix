@@ -19,32 +19,30 @@
 	      alacritty
         lazygit
         kafkactl
-        go-task
 
         glow
         ripgrep
         fzf
         ruff
-        gotools
         stylua
+	      android-tools
 
-	      go
 	      rustup
         nodejs
-        dotnetCorePackages.dotnet_8.sdk
-        dotnetCorePackages.dotnet_8.aspnetcore
-        dotnetCorePackages.dotnet_8.runtime
-        dotnet-sdk_7
-        dotnet-aspnetcore_7
-        dotnet-runtime_7
-        dotnet-sdk_6
-        dotnet-aspnetcore_6
-        dotnet-runtime_6
-        mono
-	      android-tools
+
+        go
+        gotools
+        delve
+        gopls
+        ko
+        go-mockery
+        go-task
+        goreleaser
+        goose
 
         skimpdf
 	      telegram-desktop
+        homebank
       ];
 
       fonts.packages = with pkgs; [ nerd-fonts.hack ];
@@ -56,6 +54,9 @@
         enable = true;
         enableBashCompletion = true;
         enableCompletion = true;
+        shellInit = ''
+          mkdir -p ~/.nvm
+        '';
       };
 
       # Set Git commit hash for darwin-version.
@@ -118,19 +119,14 @@
 
       nixpkgs.hostPlatform = "aarch64-darwin";
 
-      nixpkgs.config.permittedInsecurePackages = [
-        "dotnet-sdk-7.0.410"
-        "aspnetcore-runtime-7.0.20"
-        "dotnet-runtime-7.0.20"
-        "dotnet-sdk-6.0.428"
-        "aspnetcore-runtime-6.0.36"
-        "dotnet-runtime-6.0.36"
-      ];
+      # nixpkgs.config.permittedInsecurePackages = [
+      # ];
 
       homebrew = {
       	enable = true;
         taps = [
           "nikitabobko/tap"
+          "isen-ng/dotnet-sdk-versions"
         ];
 	      casks = [
           "nikitabobko/tap/aerospace"
@@ -148,7 +144,9 @@
           "windows-app"
 
           "obsidian"
+          "balenaetcher"
 	        "firefox"
+          "google-chrome@dev"
 	        "dropbox"
           "keka"
           "appcleaner"
@@ -156,10 +154,19 @@
 
           "slack"
           "mattermost"
+
+          # Order matter
+          "dotnet-sdk"
+          "mono-mdk"
+          "dotnet-sdk9"
+          "dotnet-sdk8"
+          "dotnet-sdk7"
+          "dotnet-sdk6"
 	      ];
         brews = [
           "mkcert"
           "libpq"
+          "nvm"
         ];
 	      masApps = {
           "Numbers" = 409203825;

@@ -35,6 +35,9 @@ zinit wait lucid light-mode depth=1 for \
 
 ### User ###
 
+# Increasing the limit of open file descriptors for the current shell session
+ulimit -n 8096
+
 export EDITOR=nvim
 
 source $HOME/.private
@@ -64,11 +67,12 @@ export RUST_BACKTRACE=1
 
 # .NET
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
 # Node
-export nvm_dir=$HOME/.nvm
+export NVM_DIR="$HOME/.nvm"
 
 # Bat
-export manpager="sh -c 'col -bx | bat -l man -p'"
+# export manpager="sh -c 'col -bx | bat -l man -p'"
 
 # Aliases
 alias ls="ls -lh --color"
@@ -93,9 +97,9 @@ compinit
 # source <(kafkactl completion zsh)
 
 # This loads nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
 # This loads nvm bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+[ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

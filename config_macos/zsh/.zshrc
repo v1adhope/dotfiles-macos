@@ -57,7 +57,7 @@ export GOPATH=$HOME/.local/share/go
 export PATH=$HOME/.local/share/go/bin:$PATH
 
 export GONOSUMDB=gitea.gospodaprogrammisty.ru
-export GOPROXY=direct
+export GOPROXY=https://proxy.golang.org,direct
 
 # Rust
 export RUSTUP_HOME=$HOME/.local/share/rust/rustup

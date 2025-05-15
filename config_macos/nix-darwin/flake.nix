@@ -30,7 +30,7 @@
 	      rustup
         nodejs
 
-        go
+        go_1_24
         gotools
         delve
         gopls

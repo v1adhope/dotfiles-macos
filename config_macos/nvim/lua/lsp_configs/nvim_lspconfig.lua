@@ -1,143 +1,95 @@
-local ok, _ = pcall(require, 'lsp_configs/mason')
+local ok, _ = pcall(require, "lsp_configs/mason")
 if not ok then
-  return
+	return
 end
 
-local ok, config = pcall(require, 'lspconfig')
+local ok, handlers = pcall(require, "lsp_configs/handlers")
 if not ok then
-  return
-end
-
-local ok, handlers = pcall(require, 'lsp_configs/handlers')
-if not ok then
-  return
+	return
 end
 
 for _, lsp in ipairs(Servers) do
-  -- INFO: go
-  if lsp == 'gopls' then
-    config[lsp].setup {
-      on_attach = function(client, bufnr)
-        handlers.custom_lsp_attach(client, bufnr)
-      end,
-      capabillities = handlers.capabilities,
-      settings = {
-        gopls = {
-          analyses = {
-            composites = false
-          }
-        }
-      }
-    }
+	if lsp == "lua_ls" then
+		vim.lsp.config[lsp] = {
+			on_attach = function(client, bufnr)
+				handlers.custom_lsp_attach(client, bufnr)
+			end,
 
-    -- INFO: lua
-  elseif lsp == 'lua_ls' then
-    config[lsp].setup {
-      on_attach = function(client, bufnr)
-        handlers.custom_lsp_attach(client, bufnr)
-      end,
-      capabillities = handlers.capabilities,
+			capabillities = handlers.capabilities,
 
-      -- INFO: settings https://github.com/sumneko/lua-language-server/blob/master/locale/en-us/setting.lua
-      settings = {
-        Lua = {
-          runtime = {
-            version = "LuaJIT"
-          },
-          diagnostics = {
-            disable = {
-              "redefined-local"
-            },
-            globals = {
-              "vim",
-              "nnoremap",
-              "vnoremap",
-              "inoremap",
-              "tnoremap",
-              "use",
-              "case_sensitive"
-            }
-          },
-          workspace = {
-            library = {
-              vim.api.nvim_get_runtime_file("", true),
-              vim.fn.expand("$VIMRUNTIME/lua"),
-              vim.fn.expand("$VIMRUNTIME/lua/vim/lsp") .. "/nvim/lua",
-            }
-          },
-          telemetry = {
-            enable = false
-          }
-        }
-      }
-    }
+			filetypes = { "lua" },
 
-    -- INFO: rust
-    -- TODO: refresh with https://github.com/mrcjkb/rustaceanvim
-  elseif lsp == 'rust_analyzer' then
-    config[lsp].setup {
-      on_attach = function(client, bufnr)
-        handlers.custom_lsp_attach(client, bufnr)
-      end,
-      capabillities = handlers.capabilities,
-    }
-    -- INFO: require php-cs-fixer
-    -- elseif lsp == 'phpactor' then
-    --   config[lsp].setup {
-    --     on_attach = function(client, bufnr)
-    --       handlers.custom_lsp_attach(client, bufnr)
-    --     end,
-    --     capabillities = handlers.capabilities,
-    --
-    --     root_dir = function(_)
-    --       return vim.loop.cwd()
-    --     end,
-    --     init_options = {
-    --       ['language_server.diagnostics_on_update'] = false,
-    --       ['language_server.diagnostics_on_open'] = false,
-    --       ['language_server.diagnostics_on_save'] = false,
-    --       ['language_server_phpstan.enabled'] = false,
-    --       ['language_server_psalm.enabled'] = false,
-    --       ['language_server_php_cs_fixer.enabled'] = true,
-    --       ['language_server_php_cs_fixer.bin'] = '/usr/local/bin/php-cs-fixer'
-    --     }
-    --   }
+			-- See https://github.com/sumneko/lua-language-server/blob/master/locale/en-us/setting.lua
+			settings = {
+				Lua = {
+					runtime = {
+						version = "LuaJIT",
+					},
+					diagnostics = {
+						disable = {
+							"redefined-local",
+						},
+						globals = {
+							"vim",
+							"nnoremap",
+							"vnoremap",
+							"inoremap",
+							"tnoremap",
+							"use",
+							"case_sensitive",
+						},
+					},
+					workspace = {
+						library = {
+							vim.api.nvim_get_runtime_file("", true),
+							vim.fn.expand("$VIMRUNTIME/lua"),
+							vim.fn.expand("$VIMRUNTIME/lua/vim/lsp") .. "/nvim/lua",
+						},
+					},
+					telemetry = {
+						enable = false,
+					},
+				},
+			},
+		}
+	end
 
-    -- INFO: php
-  elseif lsp == 'intelephense' then
-    config[lsp].setup {
-      on_attach = function(client, bufnr)
-        handlers.custom_lsp_attach(client, bufnr)
-      end,
-      capabillities = handlers.capabilities,
-      filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue", "php", "blade" }
-    }
+	if lsp == "gopls" then
+		vim.lsp.config[lsp] = {
+			on_attach = function(client, bufnr)
+				handlers.custom_lsp_attach(client, bufnr)
+			end,
 
-    -- INFO: frontend
-  elseif lsp == 'emmet_ls' then
-    config[lsp].setup {
-      on_attach = function(client, bufnr)
-        handlers.custom_lsp_attach(client, bufnr)
-      end,
-      capabillities = handlers.capabilities,
-      filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue", "php", "blade" }
-    }
-  elseif lsp == 'html' then
-    config[lsp].setup {
-      on_attach = function(client, bufnr)
-        handlers.custom_lsp_attach(client, bufnr)
-      end,
-      capabillities = handlers.capabilities,
-      filetypes = { "blade" },
-    }
+			capabillities = handlers.capabilities,
 
-    -- INFO: others with default settings
-  else
-    config[lsp].setup {
-      on_attach = function(client, bufnr)
-        handlers.custom_lsp_attach(client, bufnr)
-      end,
-      capabillities = handlers.capabilities,
-    }
-  end
+			filetypes = { "go" },
+
+			-- See https://github.com/golang/tools/blob/master/gopls/doc/settings.md
+			settings = {
+				gopls = {
+					analyses = {
+						composites = false,
+					},
+				},
+			},
+		}
+	end
+
+	if lsp == "jsonls" then
+		vim.lsp.config[lsp] = {
+			filetypes = { "json", "jsonc" },
+		}
+	end
+
+	if lsp == "yamlls" then
+		vim.lsp.config[lsp] = {
+			filetypes = { "yaml", "yaml.docker-compose", "yaml.gitlab" },
+		}
+	end
+
+	if lsp == "marksman" then
+		vim.lsp.config[lsp] = {
+			filetypes = { "markdown", "markdown.mdx" },
+		}
+	end
 end

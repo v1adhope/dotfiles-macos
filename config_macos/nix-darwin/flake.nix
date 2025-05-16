@@ -14,7 +14,7 @@
   let
     configuration = { pkgs, ... }: {
       environment.systemPackages = with pkgs; [
-	      neovim
+        # Move all to brew if possible
         tmux
 	      alacritty
         lazygit
@@ -164,6 +164,7 @@
           "dotnet-sdk6"
 	      ];
         brews = [
+          "neovim"
           "mkcert"
           "libpq"
           "nvm"

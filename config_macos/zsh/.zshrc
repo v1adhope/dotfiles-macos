@@ -35,6 +35,11 @@ zinit wait lucid light-mode depth=1 for \
 
 ### User ###
 
+# History
+export HISTFILE=$HOME/.zsh_history
+export HISTSIZE=100000
+export SAVEHIST=100000
+
 # Increasing the limit of open file descriptors for the current shell session
 ulimit -n 8096
 

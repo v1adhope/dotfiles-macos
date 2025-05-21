@@ -1,5 +1,10 @@
 local M = {}
 
+local ok, cmp_lsp = pcall(require, "cmp_nvim_lsp")
+if not ok then
+	return
+end
+
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
@@ -11,20 +16,12 @@ vim.keymap.set("n", "]d", function()
 	vim.diagnostic.jump({ count = 1, float = true })
 end, opts)
 
-local ok, cmp_lsp = pcall(require, "cmp_nvim_lsp")
-if not ok then
-	return
-end
-
 M.capabilities = cmp_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-function M.custom_lsp_attach(client, bufnr)
-	--TODO: use nvim-navic???
-	_ = client
-
-	-- Enable completion triggered by <c-x><c-o>
+function M.custom_lsp_attach(_, bufnr)
+	-- Enable LSP-powered omni-completion in the buffer
 	-- vim.api.nvim_set_option_value(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
 	-- See `:help vim.lsp.*` for documentation on any of the below functions

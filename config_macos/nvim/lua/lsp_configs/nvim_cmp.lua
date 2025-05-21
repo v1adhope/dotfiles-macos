@@ -8,25 +8,16 @@ if not ok then
 	return
 end
 
+local ok, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
+if not ok then
+	return
+end
+
 -- Correct work cmp with luasnip
 local has_words_before = function()
 	unpack = unpack
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
-
-local ok, vscode_like_snippets = pcall(require, "luasnip.loaders.from_vscode")
-if not ok then
-	return
-end
-
-vscode_like_snippets.lazy_load(
-	-- { exclude = {} }
-)
-
-local ok, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
-if not ok then
-	return
 end
 
 -- Insert `()` after select function or method item

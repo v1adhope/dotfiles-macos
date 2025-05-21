@@ -1,25 +1,25 @@
-local ok, ntp = pcall(require, 'nvim-treesitter.parsers')
+local ok, ntp = pcall(require, "nvim-treesitter.parsers")
 if not ok then
-  return
+	return
 end
 
 ntp.get_parser_configs().blade = {
-  install_info = {
-    url = "https://github.com/EmranMR/tree-sitter-blade",
-    files = { "src/parser.c" },
-    branch = "main",
-  },
-  filetype = "blade"
+	install_info = {
+		url = "https://github.com/EmranMR/tree-sitter-blade",
+		files = { "src/parser.c" },
+		branch = "main",
+	},
+	filetype = "blade",
 }
 
 vim.filetype.add({
-  pattern = {
-    ['.*%.blade%.php'] = 'blade',
-  },
+	pattern = {
+		[".*%.blade%.php"] = "blade",
+	},
 })
 
 vim.filetype.add({
-  pattern = {
-    ['.env.*'] = 'sh',
-  },
+	pattern = {
+		[".env.*"] = "sh",
+	},
 })

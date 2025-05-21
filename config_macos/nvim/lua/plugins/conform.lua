@@ -1,35 +1,33 @@
 local config = function()
-  local ok, conform = pcall(require, 'conform')
-  if not ok then
-    return
-  end
+	local ok, conform = pcall(require, "conform")
+	if not ok then
+		return
+	end
 
-  conform.setup {
-    formatters_by_ft = {
-      go = {
-        -- WATCH: go install golang.org/x/tools/cmd/goimports@latest
-        'goimports',
-        'gofmt'
-      },
-      python = {
-        -- WATCH: python3 -m pip install ruff --break-system-packages
-        'ruff_organize_imports',
-        'ruff_format'
-      },
-      lua = {
-        'stylua'
-      },
-    },
-    format_on_save = {
-      timeout_ms = 500,
-      lsp_format = "fallback",
-    }
-  }
+	conform.setup({
+		formatters_by_ft = {
+			go = {
+				"goimports",
+				"gofmt",
+			},
+			python = {
+				"ruff_organize_imports",
+				"ruff_format",
+			},
+			lua = {
+				"stylua",
+			},
+		},
+		format_on_save = {
+			timeout_ms = 500,
+			lsp_format = "fallback",
+		},
+	})
 end
 
 return {
-  {
-    "stevearc/conform.nvim",
-    config = config,
-  }
+	{
+		"stevearc/conform.nvim",
+		config = config,
+	},
 }

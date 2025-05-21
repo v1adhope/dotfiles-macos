@@ -7,26 +7,8 @@ return {
 	{
 		"hrsh7th/nvim-cmp",
 		"hrsh7th/cmp-nvim-lsp",
-		"saadparwaiz1/cmp_luasnip",
-	},
-	-- TODO: unstable
-	-- {
-	--   "hrsh7th/cmp-buffer",
-	--   dependencies = {
-	--     {
-	--       "rafamadriz/friendly-snippets",
-	--       dependencies = {
-	--         {
-	--           "L3MON4D3/LuaSnip",
-	--           version = "v2.*",
-	--           build = "make install_jsregexp",
-	--         },
-	--       },
-	--     },
-	--   },
-	-- },
-	{
 		"hrsh7th/cmp-buffer",
+		"saadparwaiz1/cmp_luasnip",
 	},
 	{
 		"L3MON4D3/LuaSnip",

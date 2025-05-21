@@ -1,3 +1,5 @@
+local M = {}
+
 local ok, mason = pcall(require, "mason")
 if not ok then
 	return
@@ -21,7 +23,7 @@ if not ok then
 end
 
 -- Connecting servers (see plugins.lua for require)
-Servers = {
+M.servers = {
 	"lua_ls",
 	"gopls",
 	"bashls",
@@ -36,6 +38,8 @@ Servers = {
 }
 
 mason_lsp.setup({
-	automatic_enable = Servers,
-	ensure_installed = Servers,
+	automatic_enable = M.servers,
+	ensure_installed = M.servers,
 })
+
+return M

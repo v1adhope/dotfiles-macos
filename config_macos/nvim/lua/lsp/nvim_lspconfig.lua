@@ -1,14 +1,19 @@
-local ok, _ = pcall(require, "lsp_configs/mason")
+local ok, mason = pcall(require, "lsp/mason")
 if not ok then
 	return
 end
 
-local ok, handlers = pcall(require, "lsp_configs/handlers")
+local ok, handlers = pcall(require, "lsp/handlers")
 if not ok then
 	return
 end
 
-for _, lsp in ipairs(Servers) do
+local ok, _ = pcall(require, "lsp/nvim_cmp")
+if not ok then
+	return
+end
+
+for _, lsp in ipairs(mason.servers) do
 	if lsp == "lua_ls" then
 		vim.lsp.config[lsp] = {
 			on_attach = function(client, bufnr)

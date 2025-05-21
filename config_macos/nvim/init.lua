@@ -4,8 +4,7 @@ require("settings")
 require("keymaps")
 
 -- Lsp
-require("lsp_configs/nvim_lspconfig")
-require("lsp_configs/nvim_cmp")
+require("lsp/nvim_lspconfig")
 
 -- Features
 require("features/new_line_without_comment")

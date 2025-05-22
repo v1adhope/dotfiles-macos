@@ -14,32 +14,8 @@
   let
     configuration = { pkgs, ... }: {
       environment.systemPackages = with pkgs; [
-        # Move all to brew if possible
+        alacritty
         tmux
-	      alacritty
-        lazygit
-        kafkactl
-
-        glow
-        ripgrep
-        fzf
-        ruff
-        stylua
-	      android-tools
-
-	      rustup
-        nodejs
-
-        go_1_24
-        gotools
-        delve
-        gopls
-        ko
-        go-mockery
-        go-task
-        goreleaser
-        goose
-
         skimpdf
 	      telegram-desktop
         homebank
@@ -133,7 +109,6 @@
           "maccy"
           "raycast"
           "shottr"
-
 	        "docker"
 	        "openvpn-connect"
 	        "insomnia"
@@ -142,7 +117,7 @@
           "datagrip"
           "rider"
           "windows-app"
-
+          "android-platform-tools"
           "obsidian"
           "balenaetcher"
 	        "firefox"
@@ -151,7 +126,6 @@
           "keka"
           "appcleaner"
           "monitorcontrol"
-
           "slack"
           "mattermost"
 
@@ -167,6 +141,25 @@
           "neovim"
           "mkcert"
           "libpq"
+          "glow"
+          "fzf"
+          "ripgrep"
+          "go"
+          "gopls"
+          "delve"
+          "mockery"
+          "goose"
+          "goreleaser"
+          "ko"
+          "go-task"
+          "rustup"
+          "ruff"
+          "stylua"
+          "lazygit"
+          "kafkactl"
+
+          # Don't forget install default node
+          # nvm install node
           "nvm"
         ];
 	      masApps = {

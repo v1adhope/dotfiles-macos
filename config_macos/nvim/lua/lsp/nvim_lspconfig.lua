@@ -16,12 +16,8 @@ end
 for _, lsp in ipairs(mason.servers) do
 	if lsp == "lua_ls" then
 		vim.lsp.config[lsp] = {
-			on_attach = function(client, bufnr)
-				handlers.custom_lsp_attach(client, bufnr)
-			end,
-
+			on_attach = handlers.custom_lsp_attach,
 			capabillities = handlers.capabilities,
-
 			filetypes = { "lua" },
 
 			-- See https://github.com/sumneko/lua-language-server/blob/master/locale/en-us/setting.lua
@@ -61,12 +57,8 @@ for _, lsp in ipairs(mason.servers) do
 
 	if lsp == "gopls" then
 		vim.lsp.config[lsp] = {
-			on_attach = function(client, bufnr)
-				handlers.custom_lsp_attach(client, bufnr)
-			end,
-
+			on_attach = handlers.custom_lsp_attach,
 			capabillities = handlers.capabilities,
-
 			filetypes = { "go" },
 
 			-- See https://github.com/golang/tools/blob/master/gopls/doc/settings.md

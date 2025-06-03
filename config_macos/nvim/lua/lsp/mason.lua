@@ -27,7 +27,7 @@ M.servers = {
 	"lua_ls",
 	"gopls",
 	"bashls",
-	"nil_ls",
+	-- "nil_ls",
 
 	"jsonls",
 	"yamlls",

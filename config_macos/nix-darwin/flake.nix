@@ -146,6 +146,7 @@
           "ripgrep"
           "go"
           "gopls"
+          "goimports"
           "delve"
           "mockery"
           "goose"
@@ -157,6 +158,7 @@
           "stylua"
           "lazygit"
           "kafkactl"
+          "wget"
 
           # Don't forget install default node
           # nvm install node

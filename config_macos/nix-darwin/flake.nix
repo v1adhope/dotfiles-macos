@@ -78,8 +78,6 @@
           "${pkgs.skimpdf}/Applications/Skim.app"
 	        "/Applications/Firefox.app"
           "${pkgs.telegram-desktop}/Applications/Telegram.app"
-          "/Applications/Slack.app"
-          "/Applications/Mattermost.app"
 	        "/Applications/Insomnia.app"
           "/Applications/Rider.app"
           "/Applications/DataGrip.app"
@@ -126,8 +124,6 @@
           "keka"
           "appcleaner"
           "monitorcontrol"
-          "slack"
-          "mattermost"
 
           # Order matter
           "dotnet-sdk"
@@ -159,6 +155,8 @@
           "lazygit"
           "kafkactl"
           "wget"
+          "yarn"
+          "eslint"
 
           # Don't forget install default node
           # nvm install node

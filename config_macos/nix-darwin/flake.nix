@@ -157,6 +157,7 @@
           "wget"
           "yarn"
           "eslint"
+          "golangci-lint"
 
           # Don't forget install default node
           # nvm install node

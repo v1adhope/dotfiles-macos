@@ -1,13 +1,14 @@
 local config = function()
-	local ok, mp = pcall(require, "markdown-preview")
+	local ok, rm = pcall(require, "render-markdown")
 	if not ok then
 		return
 	end
 
-	mp.setup({})
+	rm.setup({})
 end
 
 return {
-	"0x00-ketsu/markdown-preview.nvim",
+	"MeanderingProgrammer/render-markdown.nvim",
+	dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
 	config = config,
 }

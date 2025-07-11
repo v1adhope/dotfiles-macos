@@ -14,7 +14,7 @@ local config = function()
 		pickers = {
 			buffers = {
 				mappings = {
-					n = { ["<M-d>"] = actions.delete_buffer },
+					n = { ["<C-d>"] = actions.delete_buffer },
 				},
 			},
 		},

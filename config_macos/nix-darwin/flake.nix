@@ -76,6 +76,7 @@
 	        "/Applications/KeePassium.app"
 	        "/Applications/Obsidian.app"
           "${pkgs.skimpdf}/Applications/Skim.app"
+          "/Applications/Spotify.app"
 	        "/Applications/Firefox.app"
           "${pkgs.telegram-desktop}/Applications/Telegram.app"
 	        "/Applications/Insomnia.app"
@@ -124,6 +125,8 @@
           "keka"
           "appcleaner"
           "monitorcontrol"
+          "amneziavpn"
+          "spotify"
 
           # Order matter
           "dotnet-sdk"

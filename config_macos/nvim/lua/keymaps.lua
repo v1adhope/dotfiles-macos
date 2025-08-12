@@ -4,7 +4,7 @@ if not ok then
 end
 
 -- No highlighting
-Map("n", "nh", ":noh<CR>")
+Map("n", "gnh", ":noh<CR>")
 
 -- Move line
 Map("n", "<C-i>", ":m-2<CR>")
@@ -23,7 +23,7 @@ Map("n", "<C-l>", ":wincmd l<CR>")
 Map("n", "fe", ":NvimTreeToggle<CR>")
 
 -- Gitsigns
-Map("n", "bl", ":Gitsigns blame_line<CR>")
+Map("n", "gbl", ":Gitsigns blame_line<CR>")
 
 -- Telescope
 Map("n", "ff", ":Telescope find_files<CR>")

@@ -1,6 +1,11 @@
 {
   description = "v1adhope nix-darwin system flake";
 
+  # manual_install = [
+  #   "docker"
+  #   "fixjson"
+  # ];
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin/master";
@@ -10,18 +15,23 @@
     mac-app-util.url = "github:hraban/mac-app-util";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, mac-app-util }:
-  let
-    configuration = { pkgs, ... }: {
+  outputs = inputs @ {
+    self,
+    nix-darwin,
+    nixpkgs,
+    nix-homebrew,
+    mac-app-util,
+  }: let
+    configuration = {pkgs, ...}: {
       environment.systemPackages = with pkgs; [
         alacritty
         tmux
         skimpdf
-	      telegram-desktop
+        telegram-desktop
         homebank
       ];
 
-      fonts.packages = with pkgs; [ nerd-fonts.hack ];
+      fonts.packages = with pkgs; [nerd-fonts.hack];
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
@@ -72,21 +82,21 @@
         NSGlobalDomain.AppleMetricUnits = 1;
         NSGlobalDomain.AppleShowScrollBars = "Always";
         NSGlobalDomain.AppleTemperatureUnit = "Celsius";
-	      dock.persistent-apps = [
-	        "/Applications/KeePassium.app"
-	        "/Applications/Obsidian.app"
+        dock.persistent-apps = [
+          "/Applications/KeePassium.app"
+          "/Applications/Obsidian.app"
           "${pkgs.skimpdf}/Applications/Skim.app"
           "/Applications/Spotify.app"
-	        "/Applications/Firefox.app"
+          "/Applications/Firefox.app"
           "${pkgs.telegram-desktop}/Applications/Telegram.app"
-	        "/Applications/Insomnia.app"
+          "/Applications/Insomnia.app"
           "/Applications/Rider.app"
           "/Applications/DataGrip.app"
           "/Applications/Visual Studio Code.app"
           "/Applications/Zed.app"
-	        "${pkgs.alacritty}/Applications/Alacritty.app"
-	        "/System/Applications/System Settings.app"
-	      ];
+          "${pkgs.alacritty}/Applications/Alacritty.app"
+          "/System/Applications/System Settings.app"
+        ];
       };
 
       nixpkgs.config.allowUnfree = true;
@@ -98,19 +108,18 @@
       # ];
 
       homebrew = {
-      	enable = true;
+        enable = true;
         taps = [
           "nikitabobko/tap"
           "isen-ng/dotnet-sdk-versions"
         ];
-	      casks = [
+        casks = [
           "nikitabobko/tap/aerospace"
           "maccy"
           "raycast"
           "shottr"
-	        "docker"
-	        "openvpn-connect"
-	        "insomnia"
+          "openvpn-connect"
+          "insomnia"
           "zed"
           "visual-studio-code"
           "datagrip"
@@ -119,9 +128,9 @@
           "android-platform-tools"
           "obsidian"
           "balenaetcher"
-	        "firefox"
+          "firefox"
           "google-chrome@dev"
-	        "dropbox"
+          "dropbox"
           "keka"
           "appcleaner"
           "monitorcontrol"
@@ -135,7 +144,7 @@
           "dotnet-sdk8"
           "dotnet-sdk7"
           "dotnet-sdk6"
-	      ];
+        ];
         brews = [
           "neovim"
           "mkcert"
@@ -161,36 +170,41 @@
           "yarn"
           "eslint"
           "golangci-lint"
+          "dockerfmt"
+          "shfmt"
+          "mdformat"
+          "taplo"
+          "shellcheck"
+          "alejandra"
 
           # Don't forget install default node
           # nvm install node
           "nvm"
         ];
-	      masApps = {
+        masApps = {
           "Numbers" = 409203825;
           "Keynote" = 409183694;
           "Pages" = 409201541;
           "KeePassium" = 1435127111;
         };
-	      onActivation.cleanup = "zap";
-	      onActivation.autoUpdate = true;
-	      onActivation.upgrade = true;
+        onActivation.cleanup = "zap";
+        onActivation.autoUpdate = true;
+        onActivation.upgrade = true;
+      };
     };
-  };
-  in
-  {
+  in {
     darwinConfigurations."air" = nix-darwin.lib.darwinSystem {
       modules = [
         configuration
-	      nix-homebrew.darwinModules.nix-homebrew
-	      {
-	        nix-homebrew = {
-	          enable = true;
-	          enableRosetta = true;
-	          user = "rat";
-	        };
-	      }
-	      mac-app-util.darwinModules.default
+        nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            enable = true;
+            enableRosetta = true;
+            user = "rat";
+          };
+        }
+        mac-app-util.darwinModules.default
       ];
     };
   };

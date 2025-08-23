@@ -6,20 +6,27 @@ local config = function()
 
 	conform.setup({
 		formatters_by_ft = {
-			go = {
-				"goimports",
-				"gofmt",
-			},
-			python = {
-				"ruff_organize_imports",
-				"ruff_format",
-			},
-			lua = {
-				"stylua",
+			-- ["_"] = { "trim_whitespace", "trim_newlines" },
+			go = { "golangci_lint" },
+			python = { "ruff_organize_imports", "ruff_format" },
+			lua = { "stylua" },
+			dockerfile = { "dockerfmt" },
+			sh = { "shfmt" },
+			bash = { "shfmt" },
+			zsh = { "shfmt" },
+			markdown = { "mdformat" },
+			json = { "fixjson" },
+			toml = { "taplo" },
+			nix = { "alejandra" },
+		},
+		formatters = {
+			golangci_lint = {
+				command = "golangci-lint",
+				args = { "fmt", "--stdin", "--config", vim.fn.expand("~/.config/golangci-lint/config.yml") },
 			},
 		},
 		format_on_save = {
-			timeout_ms = 500,
+			timeout_ms = 1000,
 			lsp_format = "fallback",
 		},
 	})

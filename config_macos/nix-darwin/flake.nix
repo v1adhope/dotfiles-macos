@@ -177,8 +177,7 @@
           "shellcheck"
           "alejandra"
 
-          # Don't forget install default node
-          # nvm install node
+          # Don't forget install default node $nvm install node
           "nvm"
         ];
         masApps = {

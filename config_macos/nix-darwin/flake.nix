@@ -2,8 +2,9 @@
   description = "v1adhope nix-darwin system flake";
 
   # manual_install = [
-  #   "docker"
-  #   "fixjson"
+  #   "docker" https://docs.docker.com/desktop/setup/install/mac-install/
+  #   "fixjson" $npm install -g fixjson
+  #   "rustup" $curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   # ];
 
   inputs = {
@@ -161,7 +162,6 @@
           "goreleaser"
           "ko"
           "go-task"
-          "rustup"
           "ruff"
           "stylua"
           "lazygit"
@@ -176,6 +176,11 @@
           "taplo"
           "shellcheck"
           "alejandra"
+          "tree"
+          "mold"
+          "lld"
+          "bacon"
+          "cargo-audit"
 
           # Don't forget install default node $nvm install node
           "nvm"

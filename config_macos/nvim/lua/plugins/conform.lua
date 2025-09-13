@@ -18,6 +18,7 @@ local config = function()
 			json = { "fixjson" },
 			toml = { "taplo" },
 			nix = { "alejandra" },
+			rust = { "rustfmt", lsp_format = "fallback" },
 		},
 		formatters = {
 			golangci_lint = {

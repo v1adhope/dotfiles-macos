@@ -86,9 +86,6 @@ alias n="nnn"
 alias py="python3"
 alias artisan="php artisan"
 
-alias config-edit="nvim /etc/nix-darwin/flake.nix"
-alias config-rebuild="darwin-rebuild switch -I /etc/nix-darwin"
-
 alias macfixpostgres14="rm -rf /usr/local/var/postgresql@14/postmaster.pid"
 
 ### Loads ###

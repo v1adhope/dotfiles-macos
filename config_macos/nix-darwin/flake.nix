@@ -5,6 +5,7 @@
   #   "docker" https://docs.docker.com/desktop/setup/install/mac-install/
   #   "fixjson" $npm install -g fixjson
   #   "rustup" $curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  #   "bunyan" pm $install -g bunyan
   # ];
 
   inputs = {
@@ -24,12 +25,24 @@
     mac-app-util,
   }: let
     configuration = {pkgs, ...}: {
+      system.primaryUser = "rat";
+
       environment.systemPackages = with pkgs; [
         alacritty
         tmux
         skimpdf
         telegram-desktop
         homebank
+
+        (with dotnetCorePackages;
+          combinePackages [
+            dotnet-sdk_10
+            dotnet-sdk_9
+            dotnet-sdk
+            dotnet-sdk_7
+            dotnet-sdk_6
+            mono
+          ])
       ];
 
       fonts.packages = with pkgs; [nerd-fonts.hack];
@@ -105,8 +118,10 @@
 
       nixpkgs.hostPlatform = "aarch64-darwin";
 
-      # nixpkgs.config.permittedInsecurePackages = [
-      # ];
+      nixpkgs.config.permittedInsecurePackages = [
+        "dotnet-sdk-7.0.410"
+        "dotnet-sdk-6.0.428"
+      ];
 
       homebrew = {
         enable = true;
@@ -130,7 +145,7 @@
           "obsidian"
           "balenaetcher"
           "firefox"
-          "google-chrome@dev"
+          "google-chrome"
           "dropbox"
           "keka"
           "appcleaner"
@@ -139,12 +154,12 @@
           "spotify"
 
           # Order matter
-          "dotnet-sdk"
-          "mono-mdk"
-          "dotnet-sdk9"
-          "dotnet-sdk8"
-          "dotnet-sdk7"
-          "dotnet-sdk6"
+          # "dotnet-sdk"
+          # "mono-mdk"
+          # "dotnet-sdk9"
+          # "dotnet-sdk8"
+          # "dotnet-sdk7"
+          # "dotnet-sdk6"
         ];
         brews = [
           "neovim"
@@ -181,6 +196,9 @@
           "lld"
           "bacon"
           "cargo-audit"
+          "cargo-expand"
+          "sqlx-cli"
+          "cargo-udeps"
 
           # Don't forget install default node $nvm install node
           "nvm"

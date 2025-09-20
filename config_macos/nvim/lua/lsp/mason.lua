@@ -28,6 +28,7 @@ M.servers = {
 	"gopls",
 	"bashls",
 	"rust_analyzer",
+	"nil_ls",
 
 	"jsonls",
 	"yamlls",
@@ -36,7 +37,6 @@ M.servers = {
 	"taplo",
 
 	"pyright",
-	-- "nil_ls",
 }
 
 mason_lsp.setup({

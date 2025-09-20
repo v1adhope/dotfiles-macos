@@ -101,7 +101,7 @@
           "/Applications/Obsidian.app"
           "${pkgs.skimpdf}/Applications/Skim.app"
           "/Applications/Spotify.app"
-          "/Applications/Firefox.app"
+          "/Applications/Google Chrome.app"
           "${pkgs.telegram-desktop}/Applications/Telegram.app"
           "/Applications/Insomnia.app"
           "/Applications/Rider.app"

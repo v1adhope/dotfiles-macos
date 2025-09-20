@@ -152,14 +152,6 @@
           "monitorcontrol"
           "amneziavpn"
           "spotify"
-
-          # Order matter
-          # "dotnet-sdk"
-          # "mono-mdk"
-          # "dotnet-sdk9"
-          # "dotnet-sdk8"
-          # "dotnet-sdk7"
-          # "dotnet-sdk6"
         ];
         brews = [
           "neovim"
@@ -208,6 +200,7 @@
           "Keynote" = 409183694;
           "Pages" = 409201541;
           "KeePassium" = 1435127111;
+          "Amphetamine" = 937984704;
         };
         onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;

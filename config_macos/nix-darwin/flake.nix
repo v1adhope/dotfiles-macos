@@ -6,6 +6,7 @@
   #   "fixjson" $npm install -g fixjson
   #   "rustup" $curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   #   "bunyan" pm $install -g bunyan
+  #   "node" $nvm install node
   # ];
 
   inputs = {
@@ -41,7 +42,6 @@
             dotnet-sdk
             dotnet-sdk_7
             dotnet-sdk_6
-            mono
           ])
       ];
 
@@ -152,6 +152,7 @@
           "monitorcontrol"
           "amneziavpn"
           "spotify"
+          "mono-mdk"
         ];
         brews = [
           "neovim"
@@ -191,8 +192,6 @@
           "cargo-expand"
           "sqlx-cli"
           "cargo-udeps"
-
-          # Don't forget install default node $nvm install node
           "nvm"
         ];
         masApps = {

@@ -196,6 +196,8 @@
           "nvm"
           "mongodb-database-tools"
           "aider"
+          "fastfetch"
+          "fontconfig"
         ];
         masApps = {
           "Numbers" = 409203825;

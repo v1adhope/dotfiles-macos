@@ -128,6 +128,7 @@
         taps = [
           "nikitabobko/tap"
           "isen-ng/dotnet-sdk-versions"
+          "mongodb/brew"
         ];
         casks = [
           "nikitabobko/tap/aerospace"
@@ -193,6 +194,8 @@
           "sqlx-cli"
           "cargo-udeps"
           "nvm"
+          "mongodb-database-tools"
+          "aider"
         ];
         masApps = {
           "Numbers" = 409203825;

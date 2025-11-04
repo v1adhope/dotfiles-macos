@@ -11,7 +11,7 @@ Map("n", "<C-i>", ":m-2<CR>")
 Map("n", "<C-o>", ":m+<CR>")
 
 -- Buffer navigation
-Map("n", "<C-p>", ":b#<CR>")
+Map("n", "<Space><Space>", ":b#<CR>")
 
 -- Split navigation
 Map("n", "<C-h>", ":wincmd h<CR>")
@@ -28,7 +28,7 @@ Map("n", "gbl", ":Gitsigns blame_line<CR>")
 -- Telescope
 Map("n", "ff", ":Telescope find_files<CR>")
 Map("n", "fg", ":Telescope live_grep<CR>")
-Map("n", "fb", ":Telescope buffers<CR>")
+Map("n", "fb", ":Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal<CR>")
 Map("n", "fh", ":Telescope help_tags<CR>")
-Map("n", "fc", ":Telescope git_commits<CR>")
-Map("n", "fd", ":Telescope diagnostics<CR>")
+Map("n", "fc", ":Telescope git_commits initial_mode=normal<CR>")
+Map("n", "fd", ":Telescope diagnostics initial_mode=normal<CR>")

@@ -34,6 +34,7 @@
         skimpdf
         telegram-desktop
         homebank
+        qbittorrent
 
         (with dotnetCorePackages;
           combinePackages [

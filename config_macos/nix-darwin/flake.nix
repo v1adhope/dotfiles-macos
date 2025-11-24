@@ -155,6 +155,7 @@
           "amneziavpn"
           "spotify"
           "mono-mdk"
+          "iina"
         ];
         brews = [
           "neovim"

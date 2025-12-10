@@ -270,5 +270,5 @@ if.app-id = 'com.insomnia.app'
 run = 'move-node-to-workspace I'
 
 [[on-window-detected]]
-if.app-id = 'com.apple.Music'
+if.app-id = 'com.spotify.client'
 run = 'move-node-to-workspace M'

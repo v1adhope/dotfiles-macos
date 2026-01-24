@@ -7,6 +7,7 @@
   #   "rustup" $curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   #   "bunyan" pm $install -g bunyan
   #   "node" $nvm install node
+  #   "steam" https://store.steampowered.com/about/
   # ];
 
   inputs = {
@@ -130,6 +131,7 @@
           "nikitabobko/tap"
           "isen-ng/dotnet-sdk-versions"
           "mongodb/brew"
+          "anomalyco/tap"
         ];
         casks = [
           "nikitabobko/tap/aerospace"
@@ -156,6 +158,8 @@
           "spotify"
           "mono-mdk"
           "iina"
+          "cyberduck"
+          "hiddenbar"
         ];
         brews = [
           "neovim"
@@ -200,6 +204,10 @@
           "aider"
           "fastfetch"
           "fontconfig"
+          "pnpm"
+          "tnftp"
+          "nmap"
+          "anomalyco/tap/opencode"
         ];
         masApps = {
           "Numbers" = 409203825;

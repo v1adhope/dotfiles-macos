@@ -7,7 +7,7 @@
   #   "rustup" $curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   #   "bunyan" pm $install -g bunyan
   #   "node" $nvm install node
-  #   "steam" https://store.steampowered.com/about/
+  #   "porting-kit" https://www.portingkit.com/download
   # ];
 
   inputs = {

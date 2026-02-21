@@ -159,7 +159,7 @@
           "mono-mdk"
           "iina"
           "cyberduck"
-          "hiddenbar"
+          "obs"
         ];
         brews = [
           "neovim"

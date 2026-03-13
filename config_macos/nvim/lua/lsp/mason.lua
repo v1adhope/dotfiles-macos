@@ -35,6 +35,7 @@ M.servers = {
 	"marksman",
 	"docker_language_server",
 	"taplo",
+	"regols",
 
 	"pyright",
 }

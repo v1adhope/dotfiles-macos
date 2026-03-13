@@ -206,6 +206,10 @@ if.app-id = 'com.apple.finder'
 run = 'layout floating'
 
 [[on-window-detected]]
+if.app-id = 'com.company.doublecmd'
+run = 'layout floating'
+
+[[on-window-detected]]
 if.app-id = 'com.keepassium.ios'
 run = 'layout floating'
 
